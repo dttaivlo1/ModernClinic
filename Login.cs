@@ -48,6 +48,16 @@ namespace ModernClinic
                         mn.Show();
                         this.Hide();
                             break;
+
+                        case "3":
+                            MessageBox.Show("Sai tên thông tin", "Thất bại", MessageBoxButtons.OK);
+                            break;
+                        case "2":
+                            MessageBox.Show("Sai tên thông tin", "Thất bại", MessageBoxButtons.OK);
+                            break;
+                        case "1":
+                            MessageBox.Show("Sai tên thông tin", "Thất bại", MessageBoxButtons.OK);
+                            break;
                     }
                 } else
                 MessageBox.Show("Sai tên thông tin","Thất bại",MessageBoxButtons.OK);
