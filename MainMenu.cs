@@ -34,6 +34,16 @@ namespace ModernClinic
             SumPatien = (Int32) sumCM.ExecuteScalar();
             txtSum.Text = "Tổng Bệnh Nhân: "+ SumPatien.ToString();
         }
+        void ShiftStaff(string username)
+        {
+            conn.Open();
+            string checkLG_string = "Select HoTen from NHANVIEN where Username = '" + username + "'";
+            SqlCommand cmd = new SqlCommand(checkLG_string, conn);
+            SqlDataReader check = cmd.ExecuteReader();
+            string role = check[0].ToString();
+            AccountName.Text = role + " (Thoát)";
+
+        }
         public MainMenu()
         {
             InitializeComponent();
@@ -73,11 +83,7 @@ namespace ModernClinic
             public string TrangThai { get => trangThai; set => trangThai = value; }
         }
 
-        private void updateBTN_Click(object sender, EventArgs e)
-        {
-
-           // dataGridtblBenhNhan.DataMember = "BENHNHAN";
-        }
+       
             //  SQLconnection
             //  SQLconnection
             string query = "select * from BENHNHAN";
@@ -105,7 +111,7 @@ namespace ModernClinic
         private void MainMenu_Load(object sender, EventArgs e)
         {
             loadData();
-            AccountName.Text = TenNV + " (Thoát)";
+           
         }
 
         private void dataGridtblBenhNhan_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -168,8 +174,10 @@ namespace ModernClinic
             
             // String arr = "delete from BENHNHAN WHERE HoTen = N'" + txtName.Text+"'";
             String arr = "delete from BENHNHAN WHERE MaBenhNhan = " + ID ;
+            String Request_delete = "Update BENHNHAN SET TrangThai = N'Chờ xoá' where MaBenhNhan = " +ID;
 
-            command.CommandText = arr;
+            // command.CommandText = arr;
+            command.CommandText = Request_delete;
             // command.CommandText = "insert into BENHNHAN (HoTen, GioiTinh, NamSinh,DiaChi,NgayKham, TrieuChung, TrangThai) VALUES ('"+txtName.Text+"','"+cbbGender.Text+ "','" + namsinh + "','" + txrAddress.Text + "','" + dateCome.Text + "','" + txtChanDoan.Text + "','"+"Chờ Khám"+"')'";
             command.ExecuteNonQuery();
             Loadd();

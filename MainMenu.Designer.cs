@@ -356,7 +356,7 @@ namespace ModernClinic
             this.updateBTN.Size = new System.Drawing.Size(116, 29);
             this.updateBTN.TabIndex = 18;
             this.updateBTN.Text = "Refresh Dữ liệu";
-            this.updateBTN.Click += new System.EventHandler(this.updateBTN_Click);
+           
             // 
             // AccountName
             // 

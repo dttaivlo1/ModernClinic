@@ -72,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataConnection.cs" />
     <Compile Include="KhamBenh.cs">
       <SubType>Component</SubType>
@@ -96,8 +102,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModernCareDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ModernCareDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModernCareDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModernCareDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModernCareDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ModernCareDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModernCareDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KhamBenh.resx">
       <DependentUpon>KhamBenh.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +140,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="ModernCareDataSet.xsc">
       <DependentUpon>ModernCareDataSet.xsd</DependentUpon>
@@ -127,6 +152,39 @@
     </None>
     <None Include="ModernCareDataSet.xss">
       <DependentUpon>ModernCareDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ModernCareDataSet1.xsc">
+      <DependentUpon>ModernCareDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ModernCareDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ModernCareDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModernCareDataSet1.xss">
+      <DependentUpon>ModernCareDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ModernCareDataSet2.xsc">
+      <DependentUpon>ModernCareDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ModernCareDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ModernCareDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModernCareDataSet2.xss">
+      <DependentUpon>ModernCareDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ModernCareDataSet3.xsc">
+      <DependentUpon>ModernCareDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ModernCareDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ModernCareDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ModernCareDataSet3.xss">
+      <DependentUpon>ModernCareDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -140,6 +198,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\benhnhan_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\doctor_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\letan_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\thungan_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\benh_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\medical_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -40,11 +40,13 @@ namespace ModernClinic
                 if (check.Read())
                 {
                     string role = check[0].ToString();
+                    conn.Close();
                     switch (role)
                     {  
                      case "4":
+                            
                             MainMenu mn = new MainMenu();
-                            mn.TenNV = "dăđă";
+                            mn.TenNV = tk;
                         mn.Show();
                         this.Hide();
                             break;
@@ -56,15 +58,20 @@ namespace ModernClinic
                             MessageBox.Show("Sai tên thông tin", "Thất bại", MessageBoxButtons.OK);
                             break;
                         case "1":
-                            MessageBox.Show("Sai tên thông tin", "Thất bại", MessageBoxButtons.OK);
+                            Dashboard db = new Dashboard();
+                            db.Show();
+                            this.Hide();
                             break;
                     }
                 } else
                 MessageBox.Show("Sai tên thông tin","Thất bại",MessageBoxButtons.OK);
+                conn.Close();
             }
             catch (Exception)
             {
                 MessageBox.Show("Đăng nhập không thành công");
+                conn.Close();
+
             }
            
 
